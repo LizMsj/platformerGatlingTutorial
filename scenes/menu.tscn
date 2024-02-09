@@ -1,0 +1,116 @@
+[gd_scene load_steps=11 format=3 uid="uid://bt10exwvyat66"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_6aa2n"]
+[ext_resource type="PackedScene" uid="uid://blho61m7m6or7" path="res://scenes/bg_menu.tscn" id="2_p1voy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oi5s6"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.698039)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5nfj"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vhfu7"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcird"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbqw8"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.698039)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xogjy"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irj2s"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4eeiu"]
+bg_color = Color(0.203922, 0.207843, 0.372549, 0.909804)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Menu" type="Node2D"]
+position = Vector2(375, 289)
+script = ExtResource("1_6aa2n")
+
+[node name="bg_menu" parent="." instance=ExtResource("2_p1voy")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 150.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = -87.0
+offset_right = 168.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_oi5s6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b5nfj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vhfu7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_vcird")
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 150.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="Control2"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = -87.0
+offset_right = 359.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_rbqw8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xogjy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_irj2s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4eeiu")
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control2/Quit" to="." method="_on_quit_pressed"]

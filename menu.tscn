@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn0mnxb4f2in3"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_6aa2n"]
+[ext_resource type="PackedScene" uid="uid://blho61m7m6or7" path="res://scenes/bg_menu.tscn" id="2_m5yhj"]
+
+[node name="Menu" type="Node2D"]
+position = Vector2(382, 286)
+script = ExtResource("1_6aa2n")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -61.4602
+offset_top = -51.0
+offset_right = 382.54
+offset_bottom = 146.0
+
+[node name="Quit" type="Button" parent="Control"]
+offset_left = 251.46
+offset_right = 464.46
+offset_bottom = 197.0
+scale = Vector2(1.08857, 1.02506)
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="Start" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.565315
+anchor_right = -0.565315
+offset_left = 251.46
+offset_right = 464.46
+offset_bottom = 197.0
+scale = Vector2(1.08857, 1.02506)
+theme_override_font_sizes/font_size = 25
+text = "Start"
+metadata/_edit_use_anchors_ = true
+
+[node name="bg_menu" parent="." instance=ExtResource("2_m5yhj")]
+
+[connection signal="pressed" from="Control/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Control/Start" to="." method="_on_start_pressed"]
